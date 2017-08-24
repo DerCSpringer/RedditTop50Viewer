@@ -1,5 +1,5 @@
 //
-//  PostsViewController.swift
+//  Post.swift
 //  RedditTop50Viewer
 //
 //  Created by Daniel Springer on 8/24/17.
@@ -7,8 +7,7 @@
 //
 
 import Foundation
-import UIKit
 
-class PostsViewController {
+struct Post {
     
 }
