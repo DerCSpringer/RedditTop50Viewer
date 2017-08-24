@@ -11,6 +11,7 @@
 		0B2911921F4F618A003528FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B2911901F4F618A003528FF /* Main.storyboard */; };
 		0B2911941F4F618A003528FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B2911931F4F618A003528FF /* Assets.xcassets */; };
 		0B2911971F4F618A003528FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B2911951F4F618A003528FF /* LaunchScreen.storyboard */; };
+		0B29119F1F4F62E5003528FF /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29119E1F4F62E5003528FF /* PostsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		0B2911931F4F618A003528FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B2911961F4F618A003528FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B2911981F4F618A003528FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B29119E1F4F62E5003528FF /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsViewController.swift; path = Controllers/PostsViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +59,17 @@
 				0B2911931F4F618A003528FF /* Assets.xcassets */,
 				0B2911951F4F618A003528FF /* LaunchScreen.storyboard */,
 				0B2911981F4F618A003528FF /* Info.plist */,
+				0B2911A01F4F62E9003528FF /* Controllers */,
 			);
 			path = RedditTop50Viewer;
+			sourceTree = "<group>";
+		};
+		0B2911A01F4F62E9003528FF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0B29119E1F4F62E5003528FF /* PostsViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B29119F1F4F62E5003528FF /* PostsViewController.swift in Sources */,
 				0B29118D1F4F618A003528FF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
