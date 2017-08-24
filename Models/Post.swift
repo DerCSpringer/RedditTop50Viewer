@@ -9,5 +9,12 @@
 import Foundation
 
 struct Post {
-    
+    let title: String
+    let author: String
+    let datePosted: Date
+    let thumbnail: URL?
+    let numberOfComments: Double
+    let imageURL: URL?
+    var imageData: Data?
+    let nameID: String
 }
