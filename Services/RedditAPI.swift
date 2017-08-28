@@ -13,7 +13,8 @@ final class RedditAPI: FetchingServiceType {
     
     private let baseURL = URL(string: "https://www.reddit.com/top/.json?")
     
-    func getPostsAfter(_ after: String, withCount count: Int, completion: @escaping ([jsonType]?, FetchingServiceError?) -> ()) {
+    func getPostsAfter(_ postID: String, withCount count: Int, completion: @escaping ([jsonType]?, FetchingServiceError?) -> ()) {
+        self.redditTopPostsStartingAt(postID, withCount: count, completion: completion)
     }
     
     func getImage(url: URL, completion: @escaping (Data?, Error?) -> ()) {
