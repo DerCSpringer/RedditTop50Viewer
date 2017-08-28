@@ -9,7 +9,7 @@
 import Foundation
 
 final class RedditAPI: FetchingServiceType {
-    typealias RedditDataCompletion = ([jsonType]?, FetchingServiceError?) -> ()
+    private typealias RedditDataCompletion = ([jsonType]?, FetchingServiceError?) -> ()
     
     private let baseURL = URL(string: "https://www.reddit.com/top/.json?")
     
@@ -19,5 +19,17 @@ final class RedditAPI: FetchingServiceType {
     func getImage(url: URL, completion: @escaping (Data?, Error?) -> ()) {
         
     }
+    
+    private func processRedditData(data: Data, completion: RedditDataCompletion) {
+        if let JSON = try? JSONSerialization.jsonObject(with: data, options: []) as? jsonType {
+            if let post = JSON?["data"] as? jsonType, let posts = post["children"] as? [jsonType] {
+                completion(posts, nil)
+            }
+        } else {
+            completion(nil, .InvalidResponse)
+        }
+    }
+    
+
     
 }
