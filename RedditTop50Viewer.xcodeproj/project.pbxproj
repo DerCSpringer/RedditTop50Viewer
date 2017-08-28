@@ -16,6 +16,7 @@
 		0B130D0A1F549A57006A00ED /* Scene+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B130D091F549A57006A00ED /* Scene+ViewController.swift */; };
 		0B130D0C1F54A072006A00ED /* FetchingServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B130D0B1F54A072006A00ED /* FetchingServiceType.swift */; };
 		0B130D0F1F54A22D006A00ED /* RedditAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B130D0E1F54A22D006A00ED /* RedditAPI.swift */; };
+		0B130D111F54A6B3006A00ED /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B130D101F54A6B3006A00ED /* PostCell.swift */; };
 		0B29118D1F4F618A003528FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B29118C1F4F618A003528FF /* AppDelegate.swift */; };
 		0B2911921F4F618A003528FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B2911901F4F618A003528FF /* Main.storyboard */; };
 		0B2911941F4F618A003528FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B2911931F4F618A003528FF /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 		0B130D091F549A57006A00ED /* Scene+ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Scene+ViewController.swift"; path = "Scenes/Scene+ViewController.swift"; sourceTree = SOURCE_ROOT; };
 		0B130D0B1F54A072006A00ED /* FetchingServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchingServiceType.swift; path = Services/FetchingServiceType.swift; sourceTree = SOURCE_ROOT; };
 		0B130D0E1F54A22D006A00ED /* RedditAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RedditAPI.swift; path = Services/RedditAPI.swift; sourceTree = SOURCE_ROOT; };
+		0B130D101F54A6B3006A00ED /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostCell.swift; path = Cells/PostCell.swift; sourceTree = SOURCE_ROOT; };
 		0B2911891F4F618A003528FF /* RedditTop50Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditTop50Viewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B29118C1F4F618A003528FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B2911911F4F618A003528FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 		0B29118B1F4F618A003528FF /* RedditTop50Viewer */ = {
 			isa = PBXGroup;
 			children = (
+				0B130D101F54A6B3006A00ED /* PostCell.swift */,
 				0B130D0D1F54A1FE006A00ED /* Services */,
 				0B130D021F54978D006A00ED /* Scenes */,
 				0B2911A01F4F62E9003528FF /* Controllers */,
@@ -201,6 +204,7 @@
 			files = (
 				0B130D081F54996F006A00ED /* SceneCoordinator.swift in Sources */,
 				0B130CFC1F5495D2006A00ED /* BindableType.swift in Sources */,
+				0B130D111F54A6B3006A00ED /* PostCell.swift in Sources */,
 				0B130D041F54980D006A00ED /* SceneCoordinatorType.swift in Sources */,
 				0B130CFF1F549686006A00ED /* PostsViewModel.swift in Sources */,
 				0B130D011F549789006A00ED /* Scene.swift in Sources */,
