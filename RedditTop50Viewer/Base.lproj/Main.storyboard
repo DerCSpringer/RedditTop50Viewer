@@ -44,7 +44,7 @@
                                 <rect key="frame" x="16" y="64" width="343" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostsCell" id="dkr-nY-DnI" customClass="PostsTableViewCell" customModule="RedditPractice" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostsCell" id="dkr-nY-DnI" customClass="PostsCell" customModule="RedditTop50Viewer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="280"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dkr-nY-DnI" id="CRz-LI-iEl">
@@ -52,7 +52,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfV-2x-I1W">
-                                                    <rect key="frame" x="8" y="8" width="230.5" height="134"/>
+                                                    <rect key="frame" x="8" y="8" width="227" height="134"/>
                                                     <string key="text">Jsoiadjsadfiojs foij adsiofj oisaj dfiodsaj oifj saodijf iosaj foij saiofj soaidj fisaj fioj saiof iosaj fiosj adiof aiosdj fiosjad ifojasdio jfoisa dfio saiofj asdoi fo asdf oiasjdf iosafj oisadj fiojs aoif jsaj fiojasiofj iodsaj foisaj fioj dsaio jfiosdaj foij sadiof ojsad foj oasdijf okdiqn iland</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
@@ -77,7 +77,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UKS-0z-Frh">
-                                                    <rect key="frame" x="259" y="90" width="100" height="100"/>
+                                                    <rect key="frame" x="243" y="90" width="100" height="100"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="3vC-1c-LXS"/>
@@ -110,11 +110,11 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="author" destination="R46-Kr-qOW" id="GJV-Gp-YNV"/>
-                                            <outlet property="date" destination="hIH-Rs-O3v" id="LQp-81-8l1"/>
-                                            <outlet property="numOfComments" destination="OBP-ho-ib5" id="LDe-dZ-fVq"/>
-                                            <outlet property="postTitle" destination="sfV-2x-I1W" id="6LB-af-8vQ"/>
-                                            <outlet property="thumbnail" destination="UKS-0z-Frh" id="JQg-cN-FJ6"/>
+                                            <outlet property="author" destination="R46-Kr-qOW" id="jUX-y7-W07"/>
+                                            <outlet property="date" destination="hIH-Rs-O3v" id="C5S-4F-OOD"/>
+                                            <outlet property="numOfComments" destination="OBP-ho-ib5" id="eN3-bF-Im3"/>
+                                            <outlet property="postTitle" destination="sfV-2x-I1W" id="vKm-3f-sTP"/>
+                                            <outlet property="thumbnail" destination="UKS-0z-Frh" id="fJV-af-aBe"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
