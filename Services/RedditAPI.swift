@@ -20,6 +20,21 @@ final class RedditAPI: FetchingServiceType {
         
     }
     
+    private func didFetchRedditUsers(data: Data?, response: URLResponse?, error: Error?, completion: RedditDataCompletion) {
+        if let _ = error {
+            completion(nil, .FailedRequest)
+            
+        } else if let data = data, let response = response as? HTTPURLResponse {
+            if response.statusCode == 200 {
+                processRedditData(data: data, completion: completion)
+            } else {
+                completion(nil, .FailedRequest)
+            }
+        } else {
+            completion(nil, .Unknown)
+        }
+    }
+    
     private func processRedditData(data: Data, completion: RedditDataCompletion) {
         if let JSON = try? JSONSerialization.jsonObject(with: data, options: []) as? jsonType {
             if let post = JSON?["data"] as? jsonType, let posts = post["children"] as? [jsonType] {
