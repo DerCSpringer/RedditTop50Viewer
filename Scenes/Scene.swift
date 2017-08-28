@@ -1,5 +1,5 @@
 //
-//  PostsViewModel.swift
+//  Scene.swift
 //  RedditTop50Viewer
 //
 //  Created by Daniel Springer on 8/28/17.
@@ -8,10 +8,7 @@
 
 import Foundation
 
-class PostsViewModel {
-    var postList = [Post?]()
-    
-    init(sceneCoordinator: SceneCoordinatorType) {
-        
-    }
+enum Scene {
+    case postList(PostsViewModel)
+    //case imageView(ImageViewModel)
 }
