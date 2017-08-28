@@ -10,10 +10,6 @@ import UIKit
 
 class SceneCoordinator: SceneCoordinatorType {
 
-
-
-
-    
     fileprivate var window: UIWindow
     fileprivate var currentViewController: UIViewController
     
@@ -57,6 +53,4 @@ class SceneCoordinator: SceneCoordinatorType {
         
     }
     
-    
-
 }

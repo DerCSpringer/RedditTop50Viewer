@@ -20,9 +20,9 @@ extension Scene {
             //We call this bind after the view is loaded and outlets are loaded
             vc.bindViewModel(to: viewModel)
             return nc
-
-    }
+            
+        }
     }
     
-
+    
 }
