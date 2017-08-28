@@ -17,6 +17,6 @@ enum FetchingServiceError: Error {
 }
 
 protocol FetchingServiceType {
-    func getPostsAfter(_ after: String, withCount:Int, completion: @escaping ([jsonType]?, FetchingServiceError?) ->())
+    func getPostsAfter(_ postID: String, withCount:Int, completion: @escaping ([jsonType]?, FetchingServiceError?) ->())
     func getImage(url:URL, completion: @escaping(Data?, Error?) ->())
 }
