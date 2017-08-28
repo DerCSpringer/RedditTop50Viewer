@@ -10,8 +10,9 @@ import Foundation
 
 class PostsViewModel {
     var postList = [Post?]()
+    private var sceneCoordinator: SceneCoordinatorType
     
     init(sceneCoordinator: SceneCoordinatorType) {
-        
+        self.sceneCoordinator = sceneCoordinator
     }
 }
