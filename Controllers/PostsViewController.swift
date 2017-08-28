@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
-class PostsViewController {
+class PostsViewController: UIViewController, BindableType {
+    var viewModel: PostsViewModel!
     
+    func bindViewModel() {
+         
+    }
 }

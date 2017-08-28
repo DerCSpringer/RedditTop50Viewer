@@ -9,6 +9,10 @@
 import UIKit
 
 class SceneCoordinator: SceneCoordinatorType {
+
+
+
+
     
     fileprivate var window: UIWindow
     fileprivate var currentViewController: UIViewController
@@ -25,6 +29,14 @@ class SceneCoordinator: SceneCoordinatorType {
         } else {
             return viewController
         }
+    }
+    
+    func transition(to scene: Scene, type: SceneTransitionType) {
+        
+    }
+    
+    func pop(animated: Bool) {
+        
     }
     
     
