@@ -88,6 +88,14 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		0B130D151F54AA51006A00ED /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0B130D101F54A6B3006A00ED /* PostCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		0B2911801F4F618A003528FF = {
 			isa = PBXGroup;
 			children = (
@@ -107,7 +115,7 @@
 		0B29118B1F4F618A003528FF /* RedditTop50Viewer */ = {
 			isa = PBXGroup;
 			children = (
-				0B130D101F54A6B3006A00ED /* PostCell.swift */,
+				0B130D151F54AA51006A00ED /* Cells */,
 				0B130D141F54A95C006A00ED /* Extensions */,
 				0B130D0D1F54A1FE006A00ED /* Services */,
 				0B130D021F54978D006A00ED /* Scenes */,

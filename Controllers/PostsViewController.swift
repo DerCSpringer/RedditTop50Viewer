@@ -9,10 +9,40 @@
 import Foundation
 import UIKit
 
-class PostsViewController: UIViewController, BindableType {
+class PostsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, BindableType {
     var viewModel: PostsViewModel!
     
+    @IBOutlet weak var tableView: UITableView!
+    
     func bindViewModel() {
-         
+        self.viewModel.didUpdate = {
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        self.viewModel.didUpdateModelObjectAtIndex = { (index) -> Void in
+            let indexPath = IndexPath.init(row: index, section: 0)
+            DispatchQueue.main.async {
+                self.tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if (indexPath.row == viewModel.postList.count - 5) {
+            viewModel.fetchMorePosts()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.viewModel.postList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostsCell") as! PostsCell
+        cell.configureWith(entry: self.viewModel.postList[indexPath.row])
+        return cell
     }
 }
