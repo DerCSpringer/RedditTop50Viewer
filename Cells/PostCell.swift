@@ -15,14 +15,14 @@ class PostsCell: UITableViewCell {
     @IBOutlet weak var thumbnail: UIImageView!
     var didTouchThumbnail: (() -> Void)?
     
-    func configureWith(entry:Post?) {
-        if let entry = entry {
-            self.author.text = "by \(entry.author)"
-            self.numOfComments.text = "\(String(entry.numberOfComments)) comments"
-            self.date.text = "posted \(entry.datePosted.timeFromNow())"
-            self.postTitle.text = entry.title
-            if entry.thumbnail != nil {
-                if let image = entry.imageData {
+    func configureWith(post:Post?) {
+        if let post = post {
+            self.author.text = "by \(post.author)"
+            self.numOfComments.text = "\(String(post.numberOfComments)) comments"
+            self.date.text = "posted \(post.datePosted.timeFromNow())"
+            self.postTitle.text = post.title
+            if post.thumbnail != nil {
+                if let image = post.imageData {
                     thumbnail.image = UIImage(data: image)
                     self.thumbnail.isUserInteractionEnabled = true
                     setupGestureForThumbnail()
