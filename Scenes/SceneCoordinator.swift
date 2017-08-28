@@ -32,7 +32,25 @@ class SceneCoordinator: SceneCoordinatorType {
     }
     
     func transition(to scene: Scene, type: SceneTransitionType) {
-        
+        let viewController = scene.viewController() //Get our VC whatever its type
+        switch type { //Switch on the type of transition we want
+        case .root:
+            currentViewController = SceneCoordinator.actualViewController(for: viewController) //before transition
+            window.rootViewController = viewController
+            
+        case .push:
+            guard let navigationController = currentViewController.navigationController else {
+                fatalError("Can't push a view controller without a current navigation controller")
+            }
+            navigationController.pushViewController(viewController, animated: true)
+            currentViewController = SceneCoordinator.actualViewController(for: viewController)
+            
+        case .modal:
+            currentViewController.present(viewController, animated: true) {
+            }
+            currentViewController = SceneCoordinator.actualViewController(for: viewController)
+        }
+
     }
     
     func pop(animated: Bool) {
