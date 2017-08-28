@@ -24,6 +24,8 @@ class ImageViewModel {
         componenets?.scheme = "https"
         if let newURL = componenets?.url {
             self.imageURL = newURL
+            print(newURL.lastPathComponent)
+            //self.imageURL = newURL
         }
         
     }
