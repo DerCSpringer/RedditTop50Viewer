@@ -24,7 +24,8 @@ class PostsViewModel {
     }
     
     func touchedThumbnailAt(indexPath: IndexPath) {
-
+        let imageViewModel = ImageViewModel(fetchingService: self.fetchingService, sceneCoordinator: self.sceneCoordinator, imageURL: (postList[indexPath.row]?.imageURL)!)
+        self.sceneCoordinator.transition(to: .imageView(imageViewModel), type: .modal)
     }
     
     func fetchMorePosts() {
