@@ -22,12 +22,13 @@ class ImageViewModel {
         self.imageURL = imageURL
         var componenets = URLComponents.init(url: imageURL, resolvingAgainstBaseURL: true)
         componenets?.scheme = "https"
-        if let newURL = componenets?.url {
-            self.imageURL = newURL
-            print(newURL.lastPathComponent)
-            //self.imageURL = newURL
-        }
         
+        if var newURL = componenets?.url {
+            if newURL.pathExtension == "" {
+                newURL.appendPathExtension("jpg")
+            }
+            self.imageURL = newURL
+        }
     }
     
     func fetchImage() {
@@ -43,6 +44,4 @@ class ImageViewModel {
         self.sceneCoordinator.pop()
     }
 
-    
-    
 }

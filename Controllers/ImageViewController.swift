@@ -12,10 +12,6 @@ class ImageViewController: UIViewController, BindableType {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var imageViewTrailingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var imageViewBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var imageViewTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var imageViewLeadingConstraint: NSLayoutConstraint!
     
     @IBAction func goBack(_ sender: UIBarButtonItem) {
         viewModel.didTouchBackButton()
@@ -33,7 +29,6 @@ class ImageViewController: UIViewController, BindableType {
                 self.imageView.contentMode = .scaleAspectFit
                 self.imageView.clipsToBounds = true
                 self.imageView.image = image
-                print(image.size)
                 self.setZoomScale()
             }
         }
