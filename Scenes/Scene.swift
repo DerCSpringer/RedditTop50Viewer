@@ -10,5 +10,5 @@ import Foundation
 
 enum Scene {
     case postList(PostsViewModel)
-    //case imageView(ImageViewModel)
+    case imageView(ImageViewModel)
 }

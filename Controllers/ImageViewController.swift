@@ -8,6 +8,11 @@
 
 import UIKit
 
-class ImageViewController {
+class ImageViewController: UIViewController, BindableType {
     
+    var viewModel: ImageViewModel!
+    
+    func bindViewModel() {
+        
+    }
 }
