@@ -18,7 +18,9 @@ final class RedditAPI: FetchingServiceType {
     }
     
     func getImage(url: URL, completion: @escaping (Data?, Error?) -> ()) {
-        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            completion(data, nil)
+            }.resume()
     }
     
     private func redditTopPostsStartingAt(_ loc: String, withCount count:Int, completion: @escaping RedditDataCompletion) {
