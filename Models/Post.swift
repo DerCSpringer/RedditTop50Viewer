@@ -35,7 +35,13 @@ extension Post {
         self.title = title
         self.author = author
         self.datePosted = Date(timeIntervalSince1970: datePosted)
-        self.thumbnail = URL(string: thumbnail)
+        if let thumbnailURL = URL(string: thumbnail) {
+            if thumbnailURL.host != nil {
+                self.thumbnail = thumbnailURL
+            } else {
+                self.thumbnail = nil
+            }
+        } else { self.thumbnail = nil }
         self.numberOfComments = numberOfComments
         self.imageURL = URL(string: imageURL)
         self.nameID = nameID

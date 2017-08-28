@@ -192,14 +192,20 @@
                             <constraint firstItem="HSB-Ps-Hwk" firstAttribute="top" secondItem="nVN-fV-hcU" secondAttribute="bottom" id="mHE-lQ-Gbs"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="3TF-7r-2Hm"/>
+                    <navigationItem key="navigationItem" id="3TF-7r-2Hm">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="A6x-nY-cnA">
+                            <connections>
+                                <action selector="goBack:" destination="00s-8l-qeI" id="24I-b0-i7D"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="imageView" destination="YaX-Ua-u3B" id="fq9-a6-mXI"/>
-                        <outlet property="imageViewBottomConstraint" destination="VeI-F3-TZ1" id="BGa-2O-JFc"/>
-                        <outlet property="imageViewLeadingConstraint" destination="tvf-Cx-2kE" id="FFu-tv-P68"/>
-                        <outlet property="imageViewTopConstraint" destination="Gme-WF-XxK" id="mVx-rM-OYb"/>
-                        <outlet property="imageViewTrailingConstraint" destination="gIb-Su-CDx" id="tVt-09-Ovr"/>
-                        <outlet property="scrollView" destination="nVN-fV-hcU" id="jPW-E2-5i3"/>
+                        <outlet property="imageView" destination="YaX-Ua-u3B" id="iey-2H-hmr"/>
+                        <outlet property="imageViewBottomConstraint" destination="VeI-F3-TZ1" id="vm7-6G-pMY"/>
+                        <outlet property="imageViewLeadingConstraint" destination="tvf-Cx-2kE" id="PAD-X2-cIW"/>
+                        <outlet property="imageViewTopConstraint" destination="Gme-WF-XxK" id="ogP-62-vje"/>
+                        <outlet property="imageViewTrailingConstraint" destination="gIb-Su-CDx" id="P7r-xj-Pfm"/>
+                        <outlet property="scrollView" destination="nVN-fV-hcU" id="C7Q-wy-va8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gev-FI-ht8" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -49,7 +49,7 @@ class PostsViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostsCell") as! PostsCell
-        cell.configureWith(entry: self.viewModel.postList[indexPath.row])
+        cell.configureWith(post: self.viewModel.postList[indexPath.row])
         cell.didTouchThumbnail = {
             self.viewModel.touchedThumbnailAt(indexPath: indexPath)
         }
