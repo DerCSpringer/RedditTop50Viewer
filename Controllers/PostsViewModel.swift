@@ -23,6 +23,10 @@ class PostsViewModel {
         self.setupUserListForFetch()
     }
     
+    func touchedThumbnailAt(indexPath: IndexPath) {
+
+    }
+    
     func fetchMorePosts() {
         if let lastEntry = self.postList.last!{
             self.getPosts(after: lastEntry.nameID)

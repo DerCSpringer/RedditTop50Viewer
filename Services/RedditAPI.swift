@@ -19,6 +19,7 @@ final class RedditAPI: FetchingServiceType {
     
     func getImage(url: URL, completion: @escaping (Data?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
+            //propagate error
             completion(data, nil)
             }.resume()
     }
@@ -68,7 +69,5 @@ final class RedditAPI: FetchingServiceType {
             completion(nil, .InvalidResponse)
         }
     }
-    
-
     
 }
