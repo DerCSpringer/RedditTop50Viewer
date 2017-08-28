@@ -20,6 +20,17 @@ class PostsViewModel {
     init(fetchingService: FetchingServiceType, sceneCoordinator: SceneCoordinatorType) {
         self.sceneCoordinator = sceneCoordinator
         self.fetchingService = fetchingService
+        self.setupUserListForFetch()
+    }
+    
+    func fetchMorePosts() {
+        if let lastEntry = self.postList.last!{
+            self.getPosts(after: lastEntry.nameID)
+        }
+    }
+    
+    private func setupUserListForFetch() {
+        self.getPosts(after: "")
     }
     
     private func getPosts(after: String) {
@@ -42,7 +53,7 @@ class PostsViewModel {
                 })
                 {
                     self?.postList.append(contentsOf: postsModel)
-                    
+                    //Hmm getting into parenthese hell.  Refactor later
                     for (index, element) in (self?.postList.enumerated())! {
                         guard let url = element?.thumbnail else { continue }
                         if self?.postList[index]?.imageData == nil {
