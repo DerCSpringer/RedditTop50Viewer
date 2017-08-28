@@ -30,6 +30,13 @@ class PostsViewController: UIViewController, UITableViewDataSource, UITableViewD
         
     }
     
+    override func viewDidLoad() {
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 140
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+    }
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if (indexPath.row == viewModel.postList.count - 5) {
             viewModel.fetchMorePosts()

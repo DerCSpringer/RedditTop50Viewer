@@ -13,7 +13,7 @@ struct Post {
     let author: String
     let datePosted: Date
     let thumbnail: URL?
-    let numberOfComments: Double
+    let numberOfComments: Int
     let imageURL: URL?
     var imageData: Data?
     let nameID: String
@@ -28,7 +28,7 @@ extension Post {
         guard let author = JSON["author"] as? String else { return nil }
         guard let datePosted = JSON["created"] as? Double else { return nil }
         guard let thumbnail = JSON["thumbnail"] as? String else { return nil }
-        guard let numberOfComments = JSON["num_comments"] as? Double else { return nil }
+        guard let numberOfComments = JSON["num_comments"] as? Int else { return nil }
         guard let imageURL = JSON["url"] as? String else { return nil }
         guard let nameID = JSON["name"] as? String else { return nil }
         
