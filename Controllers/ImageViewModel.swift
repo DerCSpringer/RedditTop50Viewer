@@ -10,9 +10,9 @@ import Foundation
 
 class ImageViewModel {
     
-    let fetchingService: FetchingServiceType
-    let sceneCoordinator:SceneCoordinatorType
-    let imageURL: URL
+    private let fetchingService: FetchingServiceType
+    private let sceneCoordinator: SceneCoordinatorType
+    private(set)var imageURL: URL
     var imageData: Data?
     var didFetchImage: (() -> Void)?
     
@@ -22,9 +22,25 @@ class ImageViewModel {
         self.imageURL = imageURL
         var componenets = URLComponents.init(url: imageURL, resolvingAgainstBaseURL: true)
         componenets?.scheme = "https"
-        let newURL = componenets?.url
+        if let newURL = componenets?.url {
+            self.imageURL = newURL
+        }
         
     }
+    
+    func fetchImage() {
+        self.fetchingService.getImage(url: self.imageURL) {[weak self] (data, error) in
+            
+            //handle errors
+            self?.imageData = data
+            self?.didFetchImage?()
+        }
+    }
+    
+    func didTouchBackButton() {
+        self.sceneCoordinator.pop()
+    }
+
     
     
 }
