@@ -21,6 +21,12 @@ extension Scene {
             vc.bindViewModel(to: viewModel)
             return nc
             
+        case .imageView(let viewModel):
+            let nc = storyboard.instantiateViewController(withIdentifier: "ImageView") as! UINavigationController
+            var vc = nc.viewControllers.first as! ImageViewController
+            vc.bindViewModel(to: viewModel)
+            return nc
+            
         }
     }
     

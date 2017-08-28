@@ -50,7 +50,20 @@ class SceneCoordinator: SceneCoordinatorType {
     }
     
     func pop(animated: Bool) {
-        
-    }
-    
+        if let presenter = currentViewController.presentingViewController {
+            // dismiss a modal controller
+            currentViewController.dismiss(animated: animated) {
+                self.currentViewController = SceneCoordinator.actualViewController(for: presenter)
+                
+            }
+        } else if let navigationController = currentViewController.navigationController {
+            
+            guard navigationController.popViewController(animated: animated) != nil else {
+                fatalError("can't navigate back from \(currentViewController)")
+            }
+            currentViewController = SceneCoordinator.actualViewController(for: navigationController.viewControllers.last!)
+        } else {
+            fatalError("Not a modal, no navigation controller: can't navigate back from \(currentViewController)")
+        }
+    }    
 }
