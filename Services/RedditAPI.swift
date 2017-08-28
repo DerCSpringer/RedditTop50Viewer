@@ -20,6 +20,27 @@ final class RedditAPI: FetchingServiceType {
         
     }
     
+    private func redditTopPostsStartingAt(_ loc: String, withCount count:Int, completion: @escaping RedditDataCompletion) {
+        
+        var request = URLRequest(url: baseURL!)
+        let postLocation = URLQueryItem(name: "after", value: loc)
+        let postCount: URLQueryItem
+        if loc == "" {
+            postCount = URLQueryItem(name: "limit", value: String(count))
+        } else {
+            postCount = URLQueryItem(name: "count", value: String(count))
+        }
+        
+        let urlComponents = NSURLComponents(url: baseURL!, resolvingAgainstBaseURL: true)!
+        urlComponents.queryItems = [postLocation, postCount]
+        request.url = urlComponents.url!
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            self.didFetchRedditUsers(data: data, response: response, error: error, completion: completion)
+            }.resume()
+    }
+    
     private func didFetchRedditUsers(data: Data?, response: URLResponse?, error: Error?, completion: RedditDataCompletion) {
         if let _ = error {
             completion(nil, .FailedRequest)
