@@ -9,10 +9,14 @@
 import Foundation
 
 class PostsViewModel {
-    var postList = [Post?]()
-    private var sceneCoordinator: SceneCoordinatorType
     
-    init(sceneCoordinator: SceneCoordinatorType) {
+    var postList = [Post?]()
+    
+    private let sceneCoordinator: SceneCoordinatorType
+    private let fetchingService: FetchingServiceType
+    
+    init(fetchingService: FetchingServiceType, sceneCoordinator: SceneCoordinatorType) {
         self.sceneCoordinator = sceneCoordinator
+        self.fetchingService = fetchingService
     }
 }
