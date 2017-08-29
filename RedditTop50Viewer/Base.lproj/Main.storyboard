@@ -28,7 +28,7 @@
             </objects>
             <point key="canvasLocation" x="681" y="-665"/>
         </scene>
-        <!--Posts View Controller-->
+        <!--Top Reddit Posts-->
         <scene sceneID="Atx-dC-sL6">
             <objects>
                 <viewController id="1jo-aw-nEb" customClass="PostsViewController" customModule="RedditTop50Viewer" customModuleProvider="target" sceneMemberID="viewController">
@@ -128,7 +128,7 @@
                             <constraint firstItem="mCS-4T-cdf" firstAttribute="top" secondItem="bCF-du-tLx" secondAttribute="bottom" id="qRA-XA-lcn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="xft-hd-8ri"/>
+                    <navigationItem key="navigationItem" title="Top Reddit Posts" id="xft-hd-8ri"/>
                     <connections>
                         <outlet property="tableView" destination="mCS-4T-cdf" id="3MI-xw-jhb"/>
                     </connections>
@@ -155,7 +155,7 @@
             </objects>
             <point key="canvasLocation" x="4" y="120.98950524737631"/>
         </scene>
-        <!--Image View Controller-->
+        <!--Photo Viewer-->
         <scene sceneID="xJr-4z-0Ln">
             <objects>
                 <viewController id="00s-8l-qeI" customClass="ImageViewController" customModule="RedditTop50Viewer" customModuleProvider="target" sceneMemberID="viewController">
@@ -197,7 +197,7 @@
                             <constraint firstItem="nVN-fV-hcU" firstAttribute="top" secondItem="IaK-gq-GqW" secondAttribute="bottom" id="yyY-Sq-P5r"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="3TF-7r-2Hm">
+                    <navigationItem key="navigationItem" title="Photo Viewer" id="3TF-7r-2Hm">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="A6x-nY-cnA">
                             <connections>
                                 <action selector="goBack:" destination="00s-8l-qeI" id="24I-b0-i7D"/>

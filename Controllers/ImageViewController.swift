@@ -18,24 +18,21 @@ class ImageViewController: UIViewController, BindableType {
     }
     var viewModel: ImageViewModel!
     func bindViewModel() {
-        
+        self.imageView.contentMode = .scaleAspectFit
+        self.imageView.clipsToBounds = true
         viewModel.fetchImage()
         viewModel.didFetchImage = {
             DispatchQueue.main.async {
                 guard let data = self.viewModel.imageData, let image = UIImage(data: data) else {
                     self.imageView.image = UIImage(named: "default-thumbnail.jpg")
+
                     return
                 }
-                self.imageView.contentMode = .scaleAspectFit
-                self.imageView.clipsToBounds = true
                 self.imageView.image = image
                 self.setZoomScale()
             }
         }
-        
     }
-    
-
     
     @IBAction func addPhoto(_ sender: UIBarButtonItem) {
         UIImageWriteToSavedPhotosAlbum(self.imageView.image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
@@ -83,6 +80,7 @@ class ImageViewController: UIViewController, BindableType {
 }
 
 extension ImageViewController: UIScrollViewDelegate {
+    
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
     }

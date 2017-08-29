@@ -33,7 +33,6 @@ class ImageViewModel {
     
     func fetchImage() {
         self.fetchingService.getImage(url: self.imageURL) {[weak self] (data, error) in
-            
             //handle errors
             self?.imageData = data
             self?.didFetchImage?()

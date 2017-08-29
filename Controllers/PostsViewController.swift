@@ -16,7 +16,6 @@ class PostsViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func bindViewModel() {
         self.viewModel.didUpdate = {
-            
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -27,7 +26,12 @@ class PostsViewController: UIViewController, UITableViewDataSource, UITableViewD
                 self.tableView.reloadRows(at: [indexPath], with: .automatic)
             }
         }
-        
+    }
+    
+    func fixTableViewInsets() {
+        let zContentInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+        tableView.contentInset = zContentInsets
+        tableView.scrollIndicatorInsets = zContentInsets
     }
     
     override func viewDidLoad() {
@@ -35,6 +39,11 @@ class PostsViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.tableView.estimatedRowHeight = 140
         self.tableView.dataSource = self
         self.tableView.delegate = self
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        fixTableViewInsets()
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
