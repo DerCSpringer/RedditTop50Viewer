@@ -25,6 +25,9 @@ class ImageViewModel {
         
         if var newURL = componenets?.url {
             if newURL.pathExtension == "" {
+                //can't display anything besides jpg, so might as well try this extension
+                //add other file support later
+                //Sometimes they have flickr as the image sight so an easy solution might not be available
                 newURL.appendPathExtension("jpg")
             }
             self.imageURL = newURL
