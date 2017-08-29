@@ -15,18 +15,18 @@ class PostsViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     
     func bindViewModel() {
-        self.viewModel.didUpdate = {
+        self.viewModel.didUpdate = { [weak self] in
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                self?.tableView.reloadData()
             }
         }
-        self.viewModel.didUpdateModelObjectAtIndex = { (index) -> Void in
+        self.viewModel.didUpdateModelObjectAtIndex = {[weak self] (index) -> Void in
             let indexPath = IndexPath.init(row: index, section: 0)
             DispatchQueue.main.async {
-                self.tableView.reloadRows(at: [indexPath], with: .automatic)
+                self?.tableView.reloadRows(at: [indexPath], with: .automatic)
             }
         }
-    }
+    } 
     
     func fixTableViewInsets() {
         let zContentInsets = UIEdgeInsetsMake(0, 0, 0, 0)

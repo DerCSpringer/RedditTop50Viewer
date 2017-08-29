@@ -21,15 +21,14 @@ class ImageViewController: UIViewController, BindableType {
         self.imageView.contentMode = .scaleAspectFit
         self.imageView.clipsToBounds = true
         viewModel.fetchImage()
-        viewModel.didFetchImage = {
+        viewModel.didFetchImage = { [weak self] in
             DispatchQueue.main.async {
-                guard let data = self.viewModel.imageData, let image = UIImage(data: data) else {
-                    self.imageView.image = UIImage(named: "default-thumbnail.jpg")
-
+                guard let data = self?.viewModel.imageData, let image = UIImage(data: data) else {
+                    self?.imageView.image = UIImage(named: "default-thumbnail.jpg")
                     return
                 }
-                self.imageView.image = image
-                self.setZoomScale()
+                self?.imageView.image = image
+                self?.setZoomScale()
             }
         }
     }
